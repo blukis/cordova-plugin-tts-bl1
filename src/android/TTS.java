@@ -53,7 +53,7 @@ public class TTS extends CordovaPlugin implements OnInitListener {
     public void initialize(CordovaInterface cordova, final CordovaWebView webView) {
         context = cordova.getActivity().getApplicationContext();
         tts = new TextToSpeech(cordova.getActivity().getApplicationContext(), this);
-        tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+        /*tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
             @Override
             public void onStart(String s) {
                 // do nothing
@@ -74,20 +74,20 @@ public class TTS extends CordovaPlugin implements OnInitListener {
                     context.error(ERR_UNKNOWN);
                 }
             }
-        });
+        });*/
     }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
             throws JSONException {
-        if (action.equals("speak")) {
-            speak(args, callbackContext);
-        } else if (action.equals("stop")) {
-            stop(args, callbackContext);
-        } else if (action.equals("checkLanguage")) {
+        //if (action.equals("speak")) {
+        //    speak(args, callbackContext);
+        //} else if (action.equals("stop")) {
+        //    stop(args, callbackContext);
+        /*} else */if (action.equals("checkLanguage")) {
             checkLanguage(args, callbackContext);
-        } else if (action.equals("openInstallTts")) {
-            callInstallTtsActivity(args, callbackContext);
+        //} else if (action.equals("openInstallTts")) {
+        //    callInstallTtsActivity(args, callbackContext);
         } else {
             return false;
         }
@@ -100,16 +100,16 @@ public class TTS extends CordovaPlugin implements OnInitListener {
             tts = null;
         } else {
             // warm up the tts engine with an empty string
-            HashMap<String, String> ttsParams = new HashMap<String, String>();
-            ttsParams.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "");
-            tts.setLanguage(new Locale("en", "US"));
-            tts.speak("", TextToSpeech.QUEUE_FLUSH, ttsParams);
+            //HashMap<String, String> ttsParams = new HashMap<String, String>();
+            //ttsParams.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "");
+            //setLanguage(new Locale("en", "US"));
+            //tts.speak("", TextToSpeech.QUEUE_FLUSH, ttsParams);
 
             ttsInitialized = true;
         }
     }
 
-    private void stop(JSONArray args, CallbackContext callbackContext)
+    /*private void stop(JSONArray args, CallbackContext callbackContext)
       throws JSONException, NullPointerException {
         tts.stop();
     }
@@ -128,7 +128,7 @@ public class TTS extends CordovaPlugin implements OnInitListener {
           installIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
           context.startActivity(installIntent);
         }
-    }
+    }*/
 
 
     private void checkLanguage(JSONArray args, CallbackContext callbackContext)
@@ -148,7 +148,7 @@ public class TTS extends CordovaPlugin implements OnInitListener {
         callbackContext.sendPluginResult(result);
     }
 
-    private void speak(JSONArray args, CallbackContext callbackContext)
+    /*private void speak(JSONArray args, CallbackContext callbackContext)
             throws JSONException, NullPointerException {
         JSONObject params = args.getJSONObject(0);
 
@@ -203,5 +203,5 @@ public class TTS extends CordovaPlugin implements OnInitListener {
         }
 
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, ttsParams);
-    }
+    }*/
 }

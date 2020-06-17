@@ -10,7 +10,7 @@
 
 */
 
-exports.speak = function (text) {
+/*exports.speak = function (text) {
     return new Promise(function (resolve, reject) {
         var options = {};
 
@@ -28,7 +28,7 @@ exports.stop = function() {
     return new Promise(function (resolve, reject) {
         cordova.exec(resolve, reject, 'TTS', 'stop', []);
     });
-};
+};*/
 
 exports.checkLanguage = function() {
     return new Promise(function (resolve, reject) {
@@ -36,8 +36,8 @@ exports.checkLanguage = function() {
     });
 };
 
-exports.openInstallTts = function() {
+/*exports.openInstallTts = function() {
     return new Promise(function (resolve, reject) {
         cordova.exec(resolve, reject, 'TTS', 'openInstallTts', []);
     });
-};
+};*/

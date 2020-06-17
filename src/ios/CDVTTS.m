@@ -15,11 +15,11 @@
 @implementation CDVTTS
 
 - (void)pluginInitialize {
-    synthesizer = [AVSpeechSynthesizer new];
-    synthesizer.delegate = self;
+    //synthesizer = [AVSpeechSynthesizer new];
+    //synthesizer.delegate = self;
 }
 
-- (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance*)utterance {
+/*- (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance*)utterance {
     CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     if (lastCallbackId) {
         [self.commandDelegate sendPluginResult:result callbackId:lastCallbackId];
@@ -83,7 +83,7 @@
 - (void)stop:(CDVInvokedUrlCommand*)command {
     [synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryImmediate];
     [synthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
-}
+}*/
 
 - (void)checkLanguage:(CDVInvokedUrlCommand *)command {
     NSArray *voices = [AVSpeechSynthesisVoice speechVoices];
