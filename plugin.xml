@@ -3,7 +3,7 @@
 <plugin
   xmlns="http://apache.org/cordova/ns/plugins/1.0"
   xmlns:android="http://schemas.android.com/apk/res/android"
-  id="cordova-plugin-tts"
+  id="cordova-plugin-tts-gu1"
   version="0.2.3">
   <name>TTS_gu1</name>
   <description>Cordova Text-to-Speech Plugin _gu1</description>
@@ -13,7 +13,7 @@
   <repo>https://github.com/vilic/cordova-plugin-tts.git</repo>
   <issue>https://github.com/vilic/cordova-plugin-tts/issues</issue>
 
-  <js-module src="www/tts.js" name="tts">
+  <js-module src="www/tts.js" name="tts_gu1">
     <clobbers target="TTS_gu1" />
   </js-module>
 
