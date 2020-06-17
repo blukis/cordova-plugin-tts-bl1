@@ -17,7 +17,7 @@
     NSString* callbackId;
 }
 
-- (void)speak:(CDVInvokedUrlCommand*)command;
-- (void)stop:(CDVInvokedUrlCommand*)command;
+//- (void)speak:(CDVInvokedUrlCommand*)command;
+//- (void)stop:(CDVInvokedUrlCommand*)command;
 - (void)checkLanguage:(CDVInvokedUrlCommand*)command;
 @end

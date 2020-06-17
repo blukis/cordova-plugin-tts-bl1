@@ -48,7 +48,7 @@
   <platform name="android">
     <config-file target="config.xml" parent="/*">
       <feature name="TTS">
-        <param name="android-package" value="com.wordsbaking.cordova.tts.TTS" />
+        <param name="android-package" value="com.wordsbaking.cordova.tts.TTS_gu1" />
         <param name="onload" value="true" />
       </feature>
     </config-file>
