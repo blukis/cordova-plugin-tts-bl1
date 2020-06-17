@@ -5,8 +5,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   id="cordova-plugin-tts"
   version="0.2.3">
-  <name>TTS</name>
-  <description>Cordova Text-to-Speech Plugin</description>
+  <name>TTS_gu1</name>
+  <description>Cordova Text-to-Speech Plugin _gu1</description>
   <author>VILIC VANE</author>
   <license>MIT</license>
   <keywords>cordova,tts,text-to-speech</keywords>
@@ -14,7 +14,7 @@
   <issue>https://github.com/vilic/cordova-plugin-tts/issues</issue>
 
   <js-module src="www/tts.js" name="tts">
-    <clobbers target="TTS" />
+    <clobbers target="TTS_gu1" />
   </js-module>
 
   <!-- ios -->
@@ -30,7 +30,7 @@
   </platform>
 
   <!-- windows phone 8 -->
-  <platform name="wp8">
+  <!--<platform name="wp8">
     <config-file target="config.xml" parent="/*">
       <feature name="TTS">
         <param name="wp-package" value="TTS"/>
@@ -42,7 +42,7 @@
     </config-file>
   
     <source-file src="src/wp/TTS.cs" />
-  </platform>
+  </platform>-->
 
   <!-- android -->
   <platform name="android">
