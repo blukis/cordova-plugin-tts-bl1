@@ -32,7 +32,7 @@ exports.stop = function() {
 
 exports.checkLanguage = function() {
     return new Promise(function (resolve, reject) {
-        cordova.exec(resolve, reject, 'TTS', 'checkLanguage', []);
+        cordova.exec(resolve, reject, 'TTS_gu1', 'checkLanguage', []);
     });
 };
 

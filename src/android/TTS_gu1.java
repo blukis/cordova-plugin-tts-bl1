@@ -38,7 +38,7 @@ import android.content.pm.ResolveInfo;
     MIT License
 */
 
-public class TTS extends CordovaPlugin implements OnInitListener {
+public class TTS_gu1 extends CordovaPlugin implements OnInitListener {
 
     public static final String ERR_INVALID_OPTIONS = "ERR_INVALID_OPTIONS";
     public static final String ERR_NOT_INITIALIZED = "ERR_NOT_INITIALIZED";
