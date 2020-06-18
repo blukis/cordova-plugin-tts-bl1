@@ -10,9 +10,9 @@
 
 #import <Cordova/CDV.h>
 #import <Cordova/CDVAvailability.h>
-#import "CDVTTS.h"
+#import "CDVTTS_gu1.h"
 
-@implementation CDVTTS
+@implementation CDVTTS_gu1
 
 - (void)pluginInitialize {
     //synthesizer = [AVSpeechSynthesizer new];

@@ -20,13 +20,13 @@
   <!-- ios -->
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
-      <feature name="TTS">
-        <param name="ios-package" value="CDVTTS"/>
+      <feature name="TTS_gu1">
+        <param name="ios-package" value="CDVTTS_gu1"/>
       </feature>
     </config-file>
 
-    <header-file src="src/ios/CDVTTS.h" />
-    <source-file src="src/ios/CDVTTS.m" />
+    <header-file src="src/ios/CDVTTS_gu1.h" />
+    <source-file src="src/ios/CDVTTS_gu1.m" />
   </platform>
 
   <!-- windows phone 8 -->

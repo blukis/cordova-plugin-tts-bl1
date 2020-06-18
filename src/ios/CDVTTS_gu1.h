@@ -11,7 +11,7 @@
 #import <Cordova/CDV.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface CDVTTS : CDVPlugin <AVSpeechSynthesizerDelegate> {
+@interface CDVTTS_gu1 : CDVPlugin <AVSpeechSynthesizerDelegate> {
     AVSpeechSynthesizer* synthesizer;
     NSString* lastCallbackId;
     NSString* callbackId;
