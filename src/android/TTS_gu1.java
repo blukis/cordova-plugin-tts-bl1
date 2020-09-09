@@ -53,41 +53,13 @@ public class TTS_gu1 extends CordovaPlugin implements OnInitListener {
     public void initialize(CordovaInterface cordova, final CordovaWebView webView) {
         context = cordova.getActivity().getApplicationContext();
         tts = new TextToSpeech(cordova.getActivity().getApplicationContext(), this);
-        /*tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
-            @Override
-            public void onStart(String s) {
-                // do nothing
-            }
-
-            @Override
-            public void onDone(String callbackId) {
-                if (!callbackId.equals("")) {
-                    CallbackContext context = new CallbackContext(callbackId, webView);
-                    context.success();
-                }
-            }
-
-            @Override
-            public void onError(String callbackId) {
-                if (!callbackId.equals("")) {
-                    CallbackContext context = new CallbackContext(callbackId, webView);
-                    context.error(ERR_UNKNOWN);
-                }
-            }
-        });*/
     }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
             throws JSONException {
-        //if (action.equals("speak")) {
-        //    speak(args, callbackContext);
-        //} else if (action.equals("stop")) {
-        //    stop(args, callbackContext);
-        /*} else */if (action.equals("checkLanguage")) {
+        if (action.equals("checkLanguage")) {
             checkLanguage(args, callbackContext);
-        //} else if (action.equals("openInstallTts")) {
-        //    callInstallTtsActivity(args, callbackContext);
         } else {
             return false;
         }
@@ -99,36 +71,9 @@ public class TTS_gu1 extends CordovaPlugin implements OnInitListener {
         if (status != TextToSpeech.SUCCESS) {
             tts = null;
         } else {
-            // warm up the tts engine with an empty string
-            //HashMap<String, String> ttsParams = new HashMap<String, String>();
-            //ttsParams.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "");
-            //setLanguage(new Locale("en", "US"));
-            //tts.speak("", TextToSpeech.QUEUE_FLUSH, ttsParams);
-
             ttsInitialized = true;
         }
     }
-
-    /*private void stop(JSONArray args, CallbackContext callbackContext)
-      throws JSONException, NullPointerException {
-        tts.stop();
-    }
-
-    private void callInstallTtsActivity(JSONArray args, CallbackContext callbackContext)
-      throws JSONException, NullPointerException {
-
-        PackageManager pm = context.getPackageManager();
-        Intent installIntent = new Intent();
-        installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
-        ResolveInfo resolveInfo = pm.resolveActivity( installIntent, PackageManager.MATCH_DEFAULT_ONLY );
-
-        if( resolveInfo == null ) {
-           // Not able to find the activity which should be started for this intent
-        } else {
-          installIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-          context.startActivity(installIntent);
-        }
-    }*/
 
 
     private void checkLanguage(JSONArray args, CallbackContext callbackContext)
@@ -148,60 +93,4 @@ public class TTS_gu1 extends CordovaPlugin implements OnInitListener {
         callbackContext.sendPluginResult(result);
     }
 
-    /*private void speak(JSONArray args, CallbackContext callbackContext)
-            throws JSONException, NullPointerException {
-        JSONObject params = args.getJSONObject(0);
-
-        if (params == null) {
-            callbackContext.error(ERR_INVALID_OPTIONS);
-            return;
-        }
-
-        String text;
-        String locale;
-        double rate;
-
-        if (params.isNull("text")) {
-            callbackContext.error(ERR_INVALID_OPTIONS);
-            return;
-        } else {
-            text = params.getString("text");
-        }
-
-        if (params.isNull("locale")) {
-            locale = "en-US";
-        } else {
-            locale = params.getString("locale");
-        }
-
-        if (params.isNull("rate")) {
-            rate = 1.0;
-        } else {
-            rate = params.getDouble("rate");
-        }
-
-        if (tts == null) {
-            callbackContext.error(ERR_ERROR_INITIALIZING);
-            return;
-        }
-
-        if (!ttsInitialized) {
-            callbackContext.error(ERR_NOT_INITIALIZED);
-            return;
-        }
-
-        HashMap<String, String> ttsParams = new HashMap<String, String>();
-        ttsParams.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, callbackContext.getCallbackId());
-
-        String[] localeArgs = locale.split("-");
-        tts.setLanguage(new Locale(localeArgs[0], localeArgs[1]));
-
-        if (Build.VERSION.SDK_INT >= 27) {
-            tts.setSpeechRate((float) rate * 0.7f);
-        } else {
-            tts.setSpeechRate((float) rate);
-        }
-
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, ttsParams);
-    }*/
 }

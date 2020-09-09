@@ -6,12 +6,12 @@
   id="cordova-plugin-tts-gu1"
   version="0.2.3">
   <name>TTS_gu1</name>
-  <description>Cordova Text-to-Speech Plugin _gu1</description>
+  <description>Cordova TTS Languages Plugin _gu1</description>
   <author>VILIC VANE</author>
   <license>MIT</license>
-  <keywords>cordova,tts,text-to-speech</keywords>
-  <repo>https://github.com/vilic/cordova-plugin-tts.git</repo>
-  <issue>https://github.com/vilic/cordova-plugin-tts/issues</issue>
+  <keywords>cordova,tts,languages</keywords>
+  <repo>https://github.com/blukis/cordova-plugin-tts-gu1.git</repo>
+  <issue>https://github.com/blukis/cordova-plugin-tts-gu1/issues</issue>
 
   <js-module src="www/tts.js" name="tts_gu1">
     <clobbers target="TTS_gu1" />
@@ -28,21 +28,6 @@
     <header-file src="src/ios/CDVTTS_gu1.h" />
     <source-file src="src/ios/CDVTTS_gu1.m" />
   </platform>
-
-  <!-- windows phone 8 -->
-  <!--<platform name="wp8">
-    <config-file target="config.xml" parent="/*">
-      <feature name="TTS">
-        <param name="wp-package" value="TTS"/>
-      </feature>
-    </config-file>
-
-    <config-file target="Properties/WMAppManifest.xml" parent="/*/App/Capabilities">
-      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
-    </config-file>
-  
-    <source-file src="src/wp/TTS.cs" />
-  </platform>-->
 
   <!-- android -->
   <platform name="android">
